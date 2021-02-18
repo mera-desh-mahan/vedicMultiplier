@@ -5,4 +5,4 @@ sim:
 	gtkwave vedicmultiplier.vcd
 
 syn:
-	yosys -s synthesis.tcl
+	cd workarea ; yosys -s ../scripts/synthesis.tcl
