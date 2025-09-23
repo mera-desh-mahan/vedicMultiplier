@@ -7,9 +7,10 @@ sim: clean
 
 syn: create
 	cd workarea ; yosys -s ../scripts/synthesis.tcl ; cat vedic.vg  | egrep -v "\(\*" > vedic_filter.vg
+	#cd workarea ; yosys -s ../scripts/sf4_synthesis.tcl ; cat vedic.vg  | egrep -v "\(\*" > vedic_filter.vg
 
 cpnr:
-	cd workarea ; proton_hier --cleanlog --nolog
+	cd workarea ; proton_hier --cleanlog --nolog -f ../scripts/nangate_cpnr.tcl
 
 create: clean
 		mkdir workarea
